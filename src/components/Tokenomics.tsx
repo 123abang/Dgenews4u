@@ -21,9 +21,9 @@ const Tokenomics = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <div className="aspect-square">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+            <div className="relative w-full aspect-square">
               {tokenomics.map((item, index) => {
                 const rotation = index * (360 / tokenomics.length);
                 const skew = (360 / tokenomics.length);
@@ -40,13 +40,13 @@ const Tokenomics = () => {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full max-w-md mx-auto">
             {tokenomics.map((item) => (
               <div key={item.label} className="flex items-center space-x-4">
-                <div className={`w-16 h-2 rounded-full bg-gradient-to-r ${item.color}`} />
-                <div className="flex-1">
+                <div className={`w-12 h-2 rounded-full bg-gradient-to-r ${item.color}`} />
+                <div className="flex-1 text-sm md:text-base">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold">{item.label}</span>
+                    <span className="font-semibold text-gray-200">{item.label}</span>
                     <span className="text-gray-400">{item.percentage}%</span>
                   </div>
                 </div>
