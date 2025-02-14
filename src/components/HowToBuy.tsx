@@ -6,22 +6,22 @@ const HowToBuy = () => {
     {
       icon: <Wallet className="w-8 h-8" />,
       title: "Create Wallet",
-      description: "Download and set up MetaMask or Trust Wallet"
+      description: "Download and set up Phantom or Trust Wallet"
     },
     {
       icon: <RefreshCw className="w-8 h-8" />,
-      title: "Get BNB",
+      title: "Get Solana",
       description: "Purchase BNB and transfer to your wallet"
     },
     {
       icon: <ArrowRight className="w-8 h-8" />,
       title: "Connect to DEX",
-      description: "Connect your wallet to PancakeSwap"
+      description: "Connect your wallet to PumpFun"
     },
     {
       icon: <CheckCircle className="w-8 h-8" />,
       title: "Swap for DgeNews",
-      description: "Swap BNB for DgeNews tokens"
+      description: "Swap SOL for DgeNews tokens"
     }
   ];
 

@@ -58,28 +58,28 @@ const Roadmap = () => {
 
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-purple-500 to-pink-500" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-purple-500 to-pink-500 sm:left-[20px] sm:w-[4px]" />
 
-          <div className="space-y-24">
+          <div className="space-y-16 sm:space-y-24">
             {phases.map((phase, index) => (
-              <div key={index} className={`relative flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}>
-                <div className="flex-1 md:w-1/2 p-6">
-                  <div className={`${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                    <div className="p-6 rounded-xl bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 hover:border-purple-500/50 transition-all">
-                      <h3 className="text-xl font-bold mb-2 text-purple-500">{phase.phase}</h3>
-                      <h4 className="text-lg font-semibold mb-4">{phase.title}</h4>
-                      <ul className="space-y-2">
-                        {phase.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-center text-gray-400">
-                            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+              <div key={index} className="relative flex flex-col sm:flex-row items-center sm:items-start sm:pl-10">
+                {/* Indicator Dot */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full sm:left-[18px]" />
+                
+                <div className="flex-1 w-full sm:w-1/2 p-6">
+                  <div className="p-6 rounded-xl bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 hover:border-purple-500/50 transition-all">
+                    <h3 className="text-xl font-bold mb-2 text-purple-500">{phase.phase}</h3>
+                    <h4 className="text-lg font-semibold mb-4">{phase.title}</h4>
+                    <ul className="space-y-2">
+                      {phase.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-center text-gray-400">
+                          <span className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full" />
               </div>
             ))}
           </div>
