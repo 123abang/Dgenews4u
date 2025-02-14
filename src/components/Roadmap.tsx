@@ -58,7 +58,7 @@ const Roadmap = () => {
 
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-purple-500 to-pink-500 sm:left-[20px] sm:w-[4px]" />
+          {/* <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-purple-500 to-pink-500 sm:left-[20px] sm:w-[4px]" /> */}
 
           <div className="space-y-16 sm:space-y-24">
             {phases.map((phase, index) => (
