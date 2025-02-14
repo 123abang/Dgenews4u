@@ -10,6 +10,9 @@ import Photo8 from './images/photo_2025-02-13_09-06-24.jpg';
 import Photo9 from './images/photo_2025-02-13_09-06-29.jpg';
 import Photo10 from './images//photo_2025-02-13_09-06-32.jpg';
 import Photo11 from './images/photo_2025-02-13_09-06-48.jpg';
+import Photo13 from './images/image.png'
+import Photo14 from './images/image copy.png'
+// import Photo15 from './images/image copy 2.png'
 
 
 const images = [
@@ -24,6 +27,9 @@ const images = [
   { url: Photo9, title: "Education", description: "Learn and grow" },
   { url: Photo10, title: "Collaboration", description: "Work with pioneers" },
   { url: Photo11, title: "Strategy", description: "Plan for success" },
+  { url: Photo13, title: "Strategy", description: "Plan for success" },
+  { url: Photo14, title: "Strategy", description: "Plan for success" },
+  // { url: Photo15, title: "Strategy", description: "Plan for success" },
   {
     url: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80",
     title: "Crypto Trading",

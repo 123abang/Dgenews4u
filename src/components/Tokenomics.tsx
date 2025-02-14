@@ -14,15 +14,17 @@ const Tokenomics = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Tokenomics
+            Pumpfun Fair launch 
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Understanding our token distribution and utility
+          Dev sells  Zero while show is on and 10% or 30MM shares in first 24 hours which ever is less! Our social experiments will change the meme world!   Our community is the Meta!  
+          </p> <br /><br /><br /><br />
+          <p className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+           our community (fockers) is our utility.  This will be done through community social experiments!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Pie Chart */}
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:justify-self-end">
             <div className="aspect-square relative">
               {tokenomics.map((item, index) => {
@@ -76,12 +78,12 @@ const Tokenomics = () => {
                   </svg>
                 );
               })}
-              {/* Center circle for better aesthetics */}
+             
               <div className="absolute inset-[15%] rounded-full bg-black border-4 border-white/10" />
             </div>
           </div>
 
-          {/* Legend */}
+         
           <div className="space-y-6 lg:justify-self-start">
             {tokenomics.map((item) => (
               <div key={item.label} className="flex items-center space-x-4">
@@ -101,7 +103,7 @@ const Tokenomics = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
