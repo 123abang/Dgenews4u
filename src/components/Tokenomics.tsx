@@ -21,33 +21,81 @@ const Tokenomics = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto">
-            <div className="relative w-full aspect-square">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Pie Chart */}
+          <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:justify-self-end">
+            <div className="aspect-square relative">
               {tokenomics.map((item, index) => {
-                const rotation = index * (360 / tokenomics.length);
-                const skew = (360 / tokenomics.length);
+                const startAngle = tokenomics
+                  .slice(0, index)
+                  .reduce((sum, t) => sum + t.percentage, 0);
+                const endAngle = startAngle + item.percentage;
+                
+                const startCoordinates = getCoordinates(startAngle, 50);
+                const endCoordinates = getCoordinates(endAngle, 50);
+                const largeArcFlag = item.percentage > 50 ? 1 : 0;
+
                 return (
-                  <div
+                  <svg
                     key={item.label}
-                    className={`absolute top-1/2 left-1/2 w-1/2 h-1/2 -translate-y-1/2 origin-left bg-gradient-to-r ${item.color}`}
-                    style={{
-                      transform: `rotate(${rotation}deg) skew(${90 - skew}deg)`,
-                    }}
-                  />
+                    className="absolute inset-0 w-full h-full -rotate-90"
+                    viewBox="0 0 100 100"
+                  >
+                    <path
+                      d={`
+                        M 50 50
+                        L ${startCoordinates.x} ${startCoordinates.y}
+                        A 50 50 0 ${largeArcFlag} 1 ${endCoordinates.x} ${endCoordinates.y}
+                        L 50 50
+                      `}
+                      className={`fill-current bg-gradient-to-r ${item.color}`}
+                      style={{
+                        fill: `url(#gradient-${index})`,
+                      }}
+                    />
+                    <defs>
+                      <linearGradient
+                        id={`gradient-${index}`}
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop
+                          offset="0%"
+                          className={`text-${item.color.split(' ')[1]}`}
+                          style={{ stopColor: 'currentColor' }}
+                        />
+                        <stop
+                          offset="100%"
+                          className={`text-${item.color.split(' ')[3]}`}
+                          style={{ stopColor: 'currentColor' }}
+                        />
+                      </linearGradient>
+                    </defs>
+                  </svg>
                 );
               })}
+              {/* Center circle for better aesthetics */}
+              <div className="absolute inset-[15%] rounded-full bg-black border-4 border-white/10" />
             </div>
           </div>
 
-          <div className="space-y-6 w-full max-w-md mx-auto">
+          {/* Legend */}
+          <div className="space-y-6 lg:justify-self-start">
             {tokenomics.map((item) => (
               <div key={item.label} className="flex items-center space-x-4">
-                <div className={`w-12 h-2 rounded-full bg-gradient-to-r ${item.color}`} />
-                <div className="flex-1 text-sm md:text-base">
+                <div className={`w-16 h-2 rounded-full bg-gradient-to-r ${item.color}`} />
+                <div className="flex-1">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-gray-200">{item.label}</span>
+                    <span className="font-semibold">{item.label}</span>
                     <span className="text-gray-400">{item.percentage}%</span>
+                  </div>
+                  <div className="w-full h-1 bg-white/5 rounded-full mt-1">
+                    <div
+                      className={`h-full rounded-full bg-gradient-to-r ${item.color}`}
+                      style={{ width: `${item.percentage}%` }}
+                    />
                   </div>
                 </div>
               </div>
@@ -58,5 +106,14 @@ const Tokenomics = () => {
     </section>
   );
 };
+
+// Helper function to calculate coordinates on the circle
+function getCoordinates(percentage: number, radius: number) {
+  const angle = (percentage * 3.6) * (Math.PI / 180);
+  return {
+    x: 50 + radius * Math.cos(angle),
+    y: 50 + radius * Math.sin(angle),
+  };
+}
 
 export default Tokenomics;

@@ -36,7 +36,7 @@ const ImageGallery = () => {
     <section className="py-20 relative">
               <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Our Image Gallery
+            Our LiveStream Gallery
           </h2>
         </div>
       
