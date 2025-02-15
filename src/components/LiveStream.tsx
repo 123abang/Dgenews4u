@@ -26,7 +26,7 @@ const LiveStream = () => {
 
         <div className="mt-8 text-center">
           <a
-            href="https://youtube.com/@DgeNews4u"
+            href="https://youtube.com/live/KspFDirV44s?feature=share"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-all"

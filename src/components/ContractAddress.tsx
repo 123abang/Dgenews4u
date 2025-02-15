@@ -2,7 +2,7 @@ import React from 'react';
 import { Copy } from 'lucide-react';
 
 const ContractAddress = () => {
-  const contractAddress = "0x1234...5678"; // Replace with actual contract address
+  const contractAddress = "4Qgyrfx5QN1NAM3i2MeUUDj8W4WutpKfCyJpSaM6pump"; // Replace with actual contract address
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress);
